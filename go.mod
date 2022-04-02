@@ -14,6 +14,7 @@ require (
 )
 
 require (
+	github.com/go-bindata/go-bindata v3.1.2+incompatible // indirect
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
 	github.com/kr/binarydist v0.1.0 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect

@@ -4,9 +4,9 @@
 package client
 
 import (
-	"ngrok/client/mvc"
-	"ngrok/log"
-	"ngrok/version"
+	"github.com/code4EE/ngrok/client/mvc"
+	"github.com/code4EE/ngrok/log"
+	"github.com/code4EE/ngrok/version"
 	"time"
 
 	"gopkg.in/inconshreveable/go-update.v0"

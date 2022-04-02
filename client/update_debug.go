@@ -4,7 +4,7 @@
 package client
 
 import (
-	"ngrok/client/mvc"
+	"github.com/code4EE/ngrok/client/mvc"
 )
 
 // no auto-updating in debug mode
