@@ -1,6 +1,4 @@
-//go:build !windows
 // +build !windows
-
 // This file contains a simple and incomplete implementation of the terminfo
 // database. Information was taken from the ncurses manpages term(5) and
 // terminfo(5). Currently, only the string capabilities for special keys and for
@@ -172,7 +170,7 @@ func setup_term() (err error) {
 	table_offset = str_offset + 2*header[4]
 
 	keys = make([]string, 0xFFFF-key_min)
-	for i := range keys {
+	for i, _ := range keys {
 		keys[i], err = ti_read_string(rd, str_offset+2*ti_keys[i], table_offset)
 		if err != nil {
 			return
@@ -181,7 +179,7 @@ func setup_term() (err error) {
 	funcs = make([]string, t_max_funcs)
 	// the last two entries are reserved for mouse. because the table offset is
 	// not there, the two entries have to fill in manually
-	for i := range funcs[:len(funcs)-2] {
+	for i, _ := range funcs[:len(funcs)-2] {
 		funcs[i], err = ti_read_string(rd, str_offset+2*ti_funcs[i], table_offset)
 		if err != nil {
 			return

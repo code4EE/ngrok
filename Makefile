@@ -10,16 +10,10 @@ default: all
 server: 
 	go install -tags '$(BUILDTAGS)' cmd/ngrokd/...
 
-# fmt:
-# 	go fmt ./...
-
 client: 
 	go install -tags '$(BUILDTAGS)' cmd/ngrok/...
 
 assets: client-assets server-assets
-
-# bin/go-bindata:
-# 	go install github.com/go-bindata/go-bindata/...@latest
 
 client-assets:
 	go-bindata -nomemcopy -pkg=assets -tags=$(BUILDTAGS) \

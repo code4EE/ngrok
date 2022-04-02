@@ -1,7 +1,6 @@
 // Created by cgo -godefs - DO NOT EDIT
 // cgo -godefs syscalls.go
 
-//go:build !amd64
 // +build !amd64
 
 package termbox
