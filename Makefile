@@ -1,7 +1,6 @@
-.PHONY: default server client deps clean all release-all assets client-assets server-assets contributors
-export GOPATH:=$(shell pwd)
+.PHONY: default server client clean all release-all assets client-assets server-assets contributors
 
-BUILDTAGS=debug
+BUILDTAGS=release
 default: all
 
 server: 
@@ -35,8 +34,7 @@ release-all: release-client release-server
 all: client server
 
 clean:
-	go clean -i -r ngrok/...
-	rm -rf src/ngrok/client/assets/ src/ngrok/server/assets/
+	rm -rf client/assets/ server/assets/
 
 contributors:
 	echo "Contributors to ngrok, both large and small:\n" > CONTRIBUTORS
