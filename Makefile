@@ -4,17 +4,17 @@ export GOPATH:=$(shell pwd)
 BUILDTAGS=debug
 default: all
 
-deps: assets
-	go get -tags '$(BUILDTAGS)' -d -v ngrok/...
+#deps: assets
+#	go get -tags '$(BUILDTAGS)' -d -v ngrok/...
 
-server: deps
-	go install -tags '$(BUILDTAGS)' cmd/ngrokd
+server: 
+	go install -tags '$(BUILDTAGS)' cmd/ngrokd/...
 
 # fmt:
 # 	go fmt ./...
 
-client: deps
-	go install -tags '$(BUILDTAGS)' cmd/ngrok
+client: 
+	go install -tags '$(BUILDTAGS)' cmd/ngrok/...
 
 assets: client-assets server-assets
 
